@@ -1,6 +1,13 @@
 #!/bin/env bash 
  
 
+if ["$(id -u)" != 0]
+then
+	echo root permissions required >&2
+	exit 1 
+fi
+
+
 shell=/sbin/nologin
 
 echo Welcome!
